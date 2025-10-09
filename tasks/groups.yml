@@ -5,7 +5,7 @@
 - name: omero user | current group list
   become: true
   become_user: "{{ omero_user_system }}"
-  command: >
+  ansible.builtin.command: >
     {{ omero_user_bin_omero }} group -C
     -s localhost
     -u {{ omero_user_admin_user }}
@@ -24,7 +24,7 @@
 - name: omero user | create group
   become: true
   become_user: "{{ omero_user_system }}"
-  command: >
+  ansible.builtin.command: >
     {{ omero_user_bin_omero }} group -C
     -s localhost
     -u {{ omero_user_admin_user }}

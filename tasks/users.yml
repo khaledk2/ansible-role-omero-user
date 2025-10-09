@@ -5,7 +5,7 @@
 - name: omero user | current user list
   become: true
   become_user: "{{ omero_user_system }}"
-  command: >
+  ansible.builtin.command: >
     {{ omero_user_bin_omero }} user -C
     -s localhost
     -u {{ omero_user_admin_user }}
@@ -24,7 +24,7 @@
 - name: omero user | create user
   become: true
   become_user: "{{ omero_user_system }}"
-  command: >
+  ansible.builtin.command: >
     {{ omero_user_bin_omero }} user -C
     -s localhost
     -u {{ omero_user_admin_user }}
