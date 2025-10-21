@@ -7,8 +7,8 @@
 - ansible.builtin.include_tasks: groups.yml
   when: "omero_group_create | length > 0"
 
-- include_tasks: users.yml
+- ansible.builtin.include_tasks: users.yml
   when: "omero_user_create | length > 0"
 
-- include_tasks: reset-password.yml
+- ansible.builtin.include_tasks: reset-password.yml
   when: "omero_user_create | length > 0"
